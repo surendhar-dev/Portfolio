@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="logo">PORTFOLIO</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">🌙</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1>Hey, I'm <span class="highlight">Surendhar</span> 👋</h1>
+      <h2 class="typing-container">I'm a <span id="typing-text"></span><span class="cursor">_</span></h2>
+      <p>Building high-performance CLI tools, web applications, and data models.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-card">
+      <p>
+        Passionate software developer focusing on core computer science concepts, modular data modeling, 
+        and clean architecture. I love turning complex logic into smooth, responsive user experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2 class="section-title">My Projects</h2>
+    
+    <!-- Interaction: Category Filter -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="other">Other</button>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card" data-category="python">
+        <div class="card-badge">Python</div>
+        <h3>CLI Habit Tracker</h3>
+        <p>A streak-engine Habit Tracker with file persistence and statistical data modeling.</p>
+      </div>
+
+      <div class="project-card" data-category="python">
+        <div class="card-badge">Python</div>
+        <h3>Weather Dashboard</h3>
+        <p>Real-time terminal weather application querying Geocoding & Open-Meteo REST APIs.</p>
+      </div>
+
+      <div class="project-card" data-category="web">
+        <div class="card-badge">Web</div>
+        <h3>Landing Page</h3>
+        <p>Responsive personal portfolio built with modern HTML, CSS Grid, and vanilla JS.</p>
+      </div>
+
+      <div class="project-card" data-category="other">
+        <div class="card-badge">Other</div>
+        <h3>Image Metadata Inspector</h3>
+        <p>Binary file inspector analyzing image dimensions, byte sizes, and color profiles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Get In Touch</h2>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

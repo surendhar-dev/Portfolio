@@ -1,0 +1,232 @@
+/* CSS Variables for Light / Dark Mode */
+/* Red Theme CSS Variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #fff5f5;
+  --bg-card: #ffffff;
+  --text-primary: #1a0606;
+  --text-secondary: #7f1d1d;
+  --accent: #dc2626;         /* Primary Red */
+  --accent-hover: #b91c1c;   /* Darker Crimson */
+  --border: #fee2e2;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f0404;     /* Deep Charcoal/Obsidian Red */
+  --bg-secondary: #1a0909;
+  --bg-card: #1f0c0c;
+  --text-primary: #fef2f2;
+  --text-secondary: #fca5a5;
+  --accent: #ef4444;         /* Vibrant Crimson */
+  --accent-hover: #f87171;
+  --border: #371313;
+}
+
+/* Base Styles & Smooth Scroll */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.theme-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+}
+
+.hero-content h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+.highlight { color: var(--accent); }
+.typing-container { font-size: 1.8rem; color: var(--text-secondary); margin-bottom: 1rem; }
+.cursor { animation: blink 0.7s infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Button Base & Hover States */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.btn-primary { 
+  background-color: var(--accent); 
+  color: #ffffff; 
+  border: 1px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+.btn-secondary { 
+  background: transparent; 
+  color: var(--text-primary); 
+  border: 1px solid var(--border); 
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Layout Sections */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Project Cards Grid */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.card-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  background-color: var(--bg-secondary);
+  color: var(--accent);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Responsiveness (Boss Challenge) */
+@media (max-width: 600px) {
+  .hero-content h1 { font-size: 2rem; }
+  .typing-container { font-size: 1.2rem; }
+  .nav-links { gap: 0.8rem; font-size: 0.9rem; }
+}
